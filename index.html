@@ -94,7 +94,7 @@ html { overflow: hidden; }
 <style>
 .portada-foto-bg {
   position:absolute;inset:0;width:100%;height:100%;
-  background:url('portada_foto.png') no-repeat center top;
+  background:url('portada_foto.png') no-repeat center center;
   background-size:contain;
   background-color:#0a0e1a;
   z-index:0;
@@ -1005,8 +1005,8 @@ html { overflow: hidden; }
 </div>
 <script>
 // ══ NAVEGACIÓN ══
-const SLIDES = ['s0','s1','s2','s3','s4','s5','s6','s8'];
-const LABELS = ['Portada','Sistema de Señas','Line Out 7','Line Out 5','5-2','3-2','2-3','Flyer'];
+const SLIDES = ['s0','s1','s2','s3','s4','s5','s6'];
+const LABELS = ['Portada','Sistema de Señas','Line Out 7','Line Out 5','5-2','3-2','2-3'];
 let cur = 0;
 
 function buildDots(){
