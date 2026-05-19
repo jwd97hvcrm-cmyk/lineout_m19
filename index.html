@@ -66,6 +66,44 @@ body{display:flex;align-items:center;justify-content:center;}
 
 /* ── NAVEGACIÓN ── */
 .nav-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,26,0.95);border-top:1px solid rgba(255,215,0,0.15);display:flex;align-items:center;justify-content:space-between;padding:8px 20px;z-index:100;}
+
+/* ── RESPONSIVE MÓVIL ── */
+@media (max-width: 768px) and (orientation: portrait) {
+  .slideshow { width:100vw; height:calc(100vh - 52px); }
+  .slide { height:calc(100vh - 52px); }
+  .slide-header h1 { font-size:clamp(13px,3.5vw,18px); letter-spacing:1px; }
+  .slide-header { padding:8px 12px; }
+  .slide-body { flex-direction:column; overflow-y:auto; overflow-x:hidden; }
+  .panel-left { width:100%; padding:6px 8px; flex:none; }
+  .panel-right { width:100%; border-left:none; border-top:2px solid rgba(255,215,0,0.15); padding:10px 12px; flex:none; max-height:200px; overflow-y:auto; }
+  .field-svg { max-height:42vh; }
+  .tabs-row { gap:4px; }
+  .tab-btn, .tab-btn2 { padding:5px 10px; font-size:11px; }
+  .nav-btn { padding:6px 12px; font-size:12px; }
+  .nav-label { font-size:10px; }
+  .nav-dot { width:8px; height:8px; }
+  /* Portada móvil */
+  .portada-foto-content { padding:16px 12px 12px; }
+  .pf-title { font-size:clamp(38px,12vw,60px); }
+  .pf-sub { font-size:clamp(12px,4vw,18px); letter-spacing:4px; }
+  .pf-cat { padding:6px 24px; }
+  .pf-cat-t { font-size:clamp(18px,6vw,26px); }
+  .pf-chips { gap:6px; }
+  .pf-chip { padding:5px 12px; font-size:12px; }
+  /* Variantes móvil */
+  .slide-body > div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+  }
+  /* Sistema señas móvil */
+  .slide-body > div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 768px) {
+  .nav-bar { padding:6px 10px; }
+}
 .nav-btn{background:rgba(255,215,0,0.1);border:2px solid rgba(255,215,0,0.4);color:#FFD700;padding:8px 20px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:bold;transition:all 0.2s;}
 .nav-btn:hover{background:#FFD700;color:#0a0e1a;}
 .nav-btn:disabled{opacity:0.3;cursor:default;}
