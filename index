@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lineout M19 - Centro Naval Rugby</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Roboto, Arial, sans-serif;
+      background: url('lineout.jpg') no-repeat center center;
+      background-size: cover;
+      color: white;
+      text-align: center;
+    }
+    header {
+      position: relative;
+      padding: 20px;
+    }
+    header img {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      height: 80px;
+    }
+    h1 {
+      font-size: 48px;
+      margin: 0;
+      background: linear-gradient(to right, #ffffff, #00aaff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    h2 {
+      font-size: 20px;
+      margin: 10px 0 30px;
+    }
+    .button {
+      display: inline-block;
+      background: #FFD700;
+      color: #0044aa;
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 20px 0;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 16px;
+    }
+    footer p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="escudo.png" alt="Escudo Centro Naval">
+    <h1>LINEOUT M19</h1>
+    <h2>Preparate para el entrenamiento</h2>
+  </header>
+
+  <a href="https://jwd97hvcrm-cmyk.github.io/lineout_m19/" class="button" target="_blank">
+    ACCEDÉ AL MATERIAL
+  </a>
+
+  <footer>
+    <p>CENTRO NAVAL RUGBY • DIVISIÓN M19</p>
+    <p style="color:#FFD700;">¡EL DETALLE NOS LLEVA A LA VICTORIA!</p>
+  </footer>
+</body>
+</html>
