@@ -71,11 +71,9 @@ body{display:flex;align-items:center;justify-content:center;}
 @media (max-width: 768px) {
 
   html, body { overflow:hidden; width:100vw; height:100vh; }
-
-  /* ── Slideshow ── */
   .slideshow { width:100vw; height:100vh; position:relative; }
 
-  /* ── Cada slide ocupa toda la pantalla con scroll interno ── */
+  /* ── Cada slide scrolleable ── */
   .slide {
     width:100vw;
     height:100vh;
@@ -84,22 +82,23 @@ body{display:flex;align-items:center;justify-content:center;}
     -webkit-overflow-scrolling:touch;
     flex-direction:column;
     align-items:stretch;
-    padding-bottom:56px; /* espacio nav */
+    padding-bottom:56px;
   }
 
-  /* ── Nav bar fija abajo ── */
+  /* ── Nav fija abajo ── */
   .nav-bar {
     position:fixed;
     bottom:0; left:0; right:0;
     padding:6px 10px;
     min-height:50px;
     z-index:999;
+    background:rgba(10,14,26,0.97);
   }
   .nav-btn { padding:8px 16px; font-size:13px; border-radius:20px; }
   .nav-label { font-size:11px; }
   .nav-dot { width:8px; height:8px; }
 
-  /* ── Slide jugada: columna con scroll ── */
+  /* ── Slide jugada ── */
   .slide-jugada {
     display:flex;
     flex-direction:column;
@@ -107,16 +106,18 @@ body{display:flex;align-items:center;justify-content:center;}
     width:100%;
   }
 
-  /* ── Header SIEMPRE visible ── */
+  /* ── HEADER TRANSPARENTE sobre el diagrama ── */
   .slide-header {
     display:flex !important;
     padding:8px 12px;
     flex-shrink:0;
-    position:sticky;
-    top:0;
+    position:relative;
     z-index:10;
-    background:linear-gradient(90deg,#0d1f3c,#0a0e1a);
-    border-bottom:2px solid rgba(255,215,0,0.35);
+    background:rgba(10,14,26,0.55);
+    backdrop-filter:blur(6px);
+    -webkit-backdrop-filter:blur(6px);
+    border-bottom:2px solid rgba(255,215,0,0.4);
+    margin-bottom:-2px;
   }
   .slide-header h1 {
     font-size:15px;
@@ -124,44 +125,65 @@ body{display:flex;align-items:center;justify-content:center;}
     color:#FFD700;
     white-space:normal;
     line-height:1.2;
+    text-shadow:0 1px 6px rgba(0,0,0,0.8);
   }
   .slide-header .badge { display:none; }
 
-  /* ── Body en columna ── */
+  /* ── Body: diagrama ocupa TODO el ancho ── */
   .slide-body {
     flex-direction:column !important;
     flex:1;
     overflow:visible;
     height:auto;
+    position:relative;
   }
 
-  /* ── Panel izquierdo (diagrama) ── */
+  /* ── Panel izquierdo: diagrama a pantalla completa ── */
   .panel-left {
     width:100% !important;
     flex:none !important;
-    padding:6px 6px 0;
+    padding:0;
+    position:relative;
   }
 
-  /* Tabs con scroll horizontal */
+  /* Tabs TRANSPARENTES flotando sobre el diagrama */
   .tabs-row {
-    gap:4px;
-    margin-bottom:4px;
+    gap:3px;
+    margin-bottom:0;
     flex-wrap:nowrap;
     overflow-x:auto;
     -webkit-overflow-scrolling:touch;
     scrollbar-width:none;
-    padding-bottom:2px;
+    padding:5px 6px;
+    background:rgba(10,14,26,0.5);
+    backdrop-filter:blur(4px);
+    -webkit-backdrop-filter:blur(4px);
+    position:relative;
+    z-index:5;
   }
   .tabs-row::-webkit-scrollbar { display:none; }
-  .tab-btn, .tab-btn2 {
-    padding:6px 12px;
-    font-size:12px;
-    border-radius:16px;
+  .tab-btn {
+    padding:5px 11px;
+    font-size:11px;
+    border-radius:14px;
     white-space:nowrap;
     flex-shrink:0;
+    background:rgba(10,14,26,0.7);
+    border-color:rgba(255,215,0,0.6);
   }
+  .tab-btn.active { background:#FFD700; color:#0a0e1a; }
+  .tab-btn2 {
+    padding:5px 11px;
+    font-size:11px;
+    border-radius:14px;
+    white-space:nowrap;
+    flex-shrink:0;
+    background:rgba(10,14,26,0.7);
+    border-color:rgba(105,240,174,0.6);
+  }
+  .tab-btn2.active { background:#69F0AE; color:#0a0e1a; }
 
-  /* SVG diagrama */
+  /* SVG: ocupa todo el ancho, sin límite de altura */
   .field-svg {
     width:100%;
     height:auto;
@@ -169,20 +191,24 @@ body{display:flex;align-items:center;justify-content:center;}
     display:block;
   }
 
-  /* ── Panel derecho (info) ── */
+  /* ── Panel info: fondo semitransparente ── */
   .panel-right {
     display:flex !important;
     width:100% !important;
     border-left:none !important;
-    border-top:2px solid rgba(255,215,0,0.2);
+    border-top:none !important;
     padding:10px 12px 16px;
     flex-direction:column;
     gap:8px;
     height:auto !important;
     max-height:none !important;
     overflow:visible !important;
+    background:rgba(10,14,26,0.75);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border-top:2px solid rgba(255,215,0,0.25) !important;
   }
-  .info-title { font-size:12px; padding-bottom:5px; margin-bottom:3px; }
+  .info-title { font-size:12px; padding-bottom:5px; }
   .info-row { padding:5px 0; gap:8px; }
   .info-num { width:26px; height:26px; font-size:12px; flex-shrink:0; }
   .info-text { font-size:13px; line-height:1.5; }
@@ -190,11 +216,20 @@ body{display:flex;align-items:center;justify-content:center;}
   .variant-box .vt, .swap-box .st { font-size:11px; margin-bottom:4px; }
   .variant-item, .swap-item { font-size:12px; padding:3px 0; }
 
-  /* ── Portada ── */
+  /* ── Portada: foto protagonista ── */
   #s0 { overflow:hidden; }
-  .portada-foto-content { padding:16px 14px 60px; }
-  .pf-anchor { font-size:40px; }
-  .pf-club { font-size:14px; letter-spacing:3px; }
+  .portada-foto-bg { background-size:cover !important; background-position:center center !important; }
+  .portada-foto-overlay {
+    background:linear-gradient(180deg,
+      rgba(0,0,0,0.2) 0%,
+      rgba(0,0,0,0.1) 40%,
+      rgba(10,14,26,0.7) 75%,
+      rgba(10,14,26,0.95) 100%) !important;
+  }
+  .portada-foto-content { padding:16px 14px 60px; justify-content:flex-end; }
+  .pf-top { margin-bottom:auto; }
+  .pf-anchor { font-size:36px; }
+  .pf-club { font-size:13px; letter-spacing:3px; }
   .pf-title { font-size:clamp(42px,14vw,68px); }
   .pf-sub { font-size:clamp(13px,4vw,20px); letter-spacing:4px; }
   .pf-cat { padding:7px 24px; margin:8px 0; }
@@ -204,7 +239,7 @@ body{display:flex;align-items:center;justify-content:center;}
   .pf-tagline { font-size:12px; }
   .pf-hint { font-size:13px; }
 
-  /* ── Slide señas (s1) ── */
+  /* ── Slide señas ── */
   #s1 .slide-body {
     flex-direction:column !important;
     padding:10px 12px 16px;
@@ -212,26 +247,14 @@ body{display:flex;align-items:center;justify-content:center;}
     overflow:visible;
     height:auto;
   }
-  #s1 .slide-body > div {
-    width:100% !important;
-    max-width:100% !important;
-  }
-  #s1 .slide-body > div[style*="grid"] {
-    grid-template-columns:1fr !important;
-    display:grid !important;
-  }
+  #s1 .slide-body > div { width:100% !important; max-width:100% !important; }
+  #s1 .slide-body > div[style*="grid"] { grid-template-columns:1fr !important; display:grid !important; }
 
   /* ── Swap banner 2-3 ── */
-  .swap-banner {
-    padding:8px 12px;
-    gap:8px;
-    margin-bottom:6px;
-    font-size:12px;
-    flex-wrap:wrap;
-  }
+  .swap-banner { padding:8px 12px; gap:8px; margin-bottom:6px; font-size:12px; flex-wrap:wrap; background:rgba(206,147,216,0.2); }
 }
 
-/* ── Landscape móvil ── */
+/* ── Landscape ── */
 @media (max-width:900px) and (orientation:landscape) {
   .slide-header h1 { font-size:13px; }
   .tab-btn, .tab-btn2 { padding:4px 9px; font-size:10px; }
