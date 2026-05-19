@@ -1518,5 +1518,117 @@ window.addEventListener('DOMContentLoaded', function(){
 });
 lo7_render();
 </script>
+
+<!-- ══ AYUDA INICIAL ══ -->
+<div id="helpOverlay" style="
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,0.82);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:24px;
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+">
+  <div style="
+    background:linear-gradient(135deg,#0d1f3c,#0a0e1a);
+    border:2px solid #FFD700;
+    border-radius:20px;
+    padding:28px 24px;
+    max-width:340px;
+    width:100%;
+    text-align:center;
+    box-shadow:0 0 40px rgba(255,215,0,0.2);
+  ">
+    <!-- Ancla -->
+    <div style="font-size:44px;margin-bottom:8px;filter:drop-shadow(0 0 12px rgba(255,215,0,0.6));">⚓</div>
+    <div style="font-size:11px;color:rgba(255,215,0,0.6);letter-spacing:4px;text-transform:uppercase;margin-bottom:4px;">Centro Naval M19</div>
+    <div style="font-size:22px;font-weight:900;color:#FFD700;letter-spacing:2px;margin-bottom:16px;">CÓMO USAR</div>
+
+    <!-- Pasos -->
+    <div style="display:flex;flex-direction:column;gap:12px;text-align:left;margin-bottom:20px;">
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,215,0,0.07);border-radius:10px;padding:10px 12px;">
+        <div style="background:#FFD700;color:#0a0e1a;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;flex-shrink:0;">1</div>
+        <div>
+          <div style="color:#FFD700;font-size:13px;font-weight:700;margin-bottom:2px;">Elegí la configuración</div>
+          <div style="color:#aaa;font-size:12px;line-height:1.4;">Usá las flechas <strong style="color:white;">← →</strong> o los puntos de abajo para navegar entre Line Out 7, 5, 5-2, 3-2 y 2-3.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,215,0,0.07);border-radius:10px;padding:10px 12px;">
+        <div style="background:#FFD700;color:#0a0e1a;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;flex-shrink:0;">2</div>
+        <div>
+          <div style="color:#FFD700;font-size:13px;font-weight:700;margin-bottom:2px;">Presioná los botones amarillos</div>
+          <div style="color:#aaa;font-size:12px;line-height:1.4;">Elegí la <strong style="color:#FFD700;">seña</strong> (Impar, Par, Entrenador, 0) para ver quién salta y quién levanta.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(105,240,174,0.07);border-radius:10px;padding:10px 12px;">
+        <div style="background:#69F0AE;color:#0a0e1a;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;flex-shrink:0;">3</div>
+        <div>
+          <div style="color:#69F0AE;font-size:13px;font-weight:700;margin-bottom:2px;">Elegí la variante verde</div>
+          <div style="color:#aaa;font-size:12px;line-height:1.4;">Taping, Piedra o Calesita para ver qué pasa después del salto.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:flex-start;gap:12px;background:rgba(255,255,255,0.04);border-radius:10px;padding:10px 12px;">
+        <div style="font-size:18px;flex-shrink:0;margin-top:2px;">🔍</div>
+        <div>
+          <div style="color:white;font-size:13px;font-weight:700;margin-bottom:2px;">Leé el diagrama</div>
+          <div style="color:#aaa;font-size:12px;line-height:1.4;"><span style="color:#FFD700;">●</span> Dorado = salta &nbsp; <span style="color:#69F0AE;">●</span> Verde = levanta &nbsp; <span style="color:#4FC3F7;">→</span> Azul = pase</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Botón cerrar -->
+    <button onclick="closeHelp()" style="
+      background:linear-gradient(135deg,#FFD700,#FF8C00);
+      color:#0a0e1a;
+      border:none;
+      border-radius:50px;
+      padding:13px 40px;
+      font-size:16px;
+      font-weight:900;
+      cursor:pointer;
+      letter-spacing:2px;
+      width:100%;
+      box-shadow:0 4px 20px rgba(255,215,0,0.35);
+    ">¡ENTENDIDO! ▶</button>
+
+    <div style="margin-top:10px;font-size:10px;color:rgba(255,255,255,0.25);letter-spacing:2px;">
+      Toca en cualquier momento el <strong style="color:rgba(255,215,0,0.4);">?</strong> para volver a ver esto
+    </div>
+  </div>
+</div>
+
+<!-- Botón ? flotante -->
+<button id="helpBtn" onclick="document.getElementById('helpOverlay').style.display='flex'" style="
+  position:fixed;
+  bottom:58px;right:12px;
+  width:36px;height:36px;
+  border-radius:50%;
+  background:rgba(255,215,0,0.15);
+  border:2px solid rgba(255,215,0,0.5);
+  color:#FFD700;
+  font-size:16px;font-weight:900;
+  cursor:pointer;
+  z-index:998;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.4);
+">?</button>
+
+<script>
+function closeHelp(){
+  document.getElementById('helpOverlay').style.display='none';
+  try{ localStorage.setItem('lo_help_seen','1'); }catch(e){}
+}
+// Si ya lo vio, no mostrar
+try{
+  if(localStorage.getItem('lo_help_seen')==='1'){
+    document.getElementById('helpOverlay').style.display='none';
+  }
+}catch(e){}
+</script>
 </body>
 </html>
