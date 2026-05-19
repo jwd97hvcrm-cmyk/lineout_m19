@@ -69,86 +69,71 @@ body{display:flex;align-items:center;justify-content:center;}
 
 /* ── RESPONSIVE MÓVIL ── */
 @media (max-width: 768px) {
-  /* Nav bar */
-  .nav-bar { padding:5px 8px; }
-  .nav-btn { padding:7px 14px; font-size:13px; border-radius:16px; }
-  .nav-label { font-size:11px; letter-spacing:1px; }
-  .nav-dot { width:8px; height:8px; }
+  /* Nav bar compacta */
+  .nav-bar { padding:4px 8px; min-height:44px; }
+  .nav-btn { padding:6px 12px; font-size:12px; border-radius:14px; }
+  .nav-label { font-size:10px; letter-spacing:1px; }
+  .nav-dot { width:7px; height:7px; }
 
-  /* Slideshow ocupa toda la pantalla menos nav */
-  .slideshow { width:100vw; height:calc(100vh - 50px); }
-  .slide { height:calc(100vh - 50px); overflow:hidden; }
+  /* Slideshow */
+  .slideshow, .slide { width:100vw; height:calc(100vh - 44px); overflow:hidden; }
 
-  /* Header más compacto */
-  .slide-header { padding:7px 10px; }
-  .slide-header h1 { font-size:15px; letter-spacing:0.5px; }
-  .slide-header .badge { font-size:10px; padding:3px 8px; }
+  /* Header MUY compacto */
+  .slide-header { padding:5px 8px; min-height:0; flex-shrink:0; }
+  .slide-header h1 { font-size:13px; letter-spacing:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .slide-header .badge { display:none; }
+
+  /* Tabs compactas */
+  .tabs-row { gap:3px; margin-bottom:3px; flex-wrap:nowrap; overflow-x:auto; padding-bottom:2px; }
+  .tab-btn, .tab-btn2 { padding:4px 8px; font-size:10px; border-radius:12px; border-width:1.5px; white-space:nowrap; flex-shrink:0; }
 
   /* Body en columna */
-  .slide-body { flex-direction:column; overflow:hidden; height:calc(100% - 42px); }
+  .slide-body { flex-direction:column; height:calc(100% - 36px); overflow:hidden; }
 
-  /* Panel izquierdo (diagrama) */
-  .panel-left { width:100%; flex:0 0 auto; padding:4px 6px; height:auto; }
-  .tabs-row { gap:3px; margin-bottom:4px; }
-  .tab-btn, .tab-btn2 { padding:4px 9px; font-size:11px; border-radius:14px; border-width:1.5px; }
-  .field-svg { max-height:38vh; width:100%; }
+  /* Panel diagrama — 45% de la altura */
+  .panel-left { width:100%; flex:0 0 45%; padding:2px 4px; overflow:hidden; }
+  .field-svg { max-height:100%; width:100%; }
 
-  /* Panel derecho (info) */
+  /* Panel info — resto */
   .panel-right {
-    width:100%; flex:1; border-left:none;
-    border-top:1px solid rgba(255,215,0,0.2);
-    padding:6px 10px; overflow-y:auto;
-    display:flex; flex-direction:column; gap:5px;
+    width:100%; flex:1; min-height:0;
+    border-left:none; border-top:1px solid rgba(255,215,0,0.2);
+    padding:5px 8px; overflow-y:auto; gap:4px;
   }
-  .info-title { font-size:11px; padding-bottom:4px; margin-bottom:2px; }
-  .info-row { padding:4px 0; gap:6px; }
-  .info-num { width:24px; height:24px; font-size:11px; }
-  .info-text { font-size:12px; line-height:1.4; }
-  .variant-box { padding:6px 8px; }
-  .variant-box .vt { font-size:10px; margin-bottom:4px; }
-  .variant-item { font-size:11px; padding:2px 0; }
-  .swap-box { padding:6px 8px; }
-  .swap-box .st { font-size:10px; }
-  .swap-item { font-size:11px; }
+  .info-title { font-size:10px; padding-bottom:3px; margin-bottom:2px; }
+  .info-row { padding:3px 0; gap:5px; }
+  .info-num { width:22px; height:22px; font-size:10px; flex-shrink:0; }
+  .info-text { font-size:11px; line-height:1.3; }
+  .variant-box, .swap-box { padding:5px 7px; }
+  .variant-box .vt, .swap-box .st { font-size:9px; margin-bottom:3px; }
+  .variant-item, .swap-item { font-size:10px; padding:1px 0; }
 
   /* Portada */
-  .portada-foto-content { padding:12px 10px 10px; }
-  .pf-anchor { font-size:36px; }
-  .pf-club { font-size:13px; letter-spacing:3px; }
-  .pf-title { font-size:clamp(36px,13vw,56px); }
-  .pf-sub { font-size:clamp(11px,4vw,16px); letter-spacing:3px; }
-  .pf-cat { padding:5px 20px; margin:8px 0; }
-  .pf-cat-t { font-size:clamp(16px,6vw,24px); }
-  .pf-chips { gap:5px; margin:5px 0; }
-  .pf-chip { padding:4px 10px; font-size:11px; }
-  .pf-tagline { font-size:10px; letter-spacing:2px; }
-  .pf-hint { font-size:11px; letter-spacing:2px; }
+  .portada-foto-content { padding:10px 8px 8px; }
+  .pf-top { gap:8px; }
+  .pf-anchor { font-size:28px; }
+  .pf-club { font-size:11px; letter-spacing:2px; }
+  .pf-title { font-size:clamp(32px,12vw,52px); }
+  .pf-sub { font-size:clamp(10px,3.5vw,14px); letter-spacing:2px; }
+  .pf-cat { padding:4px 16px; margin:6px 0; }
+  .pf-cat-t { font-size:clamp(14px,5.5vw,22px); }
+  .pf-chips { gap:4px; margin:4px 0; }
+  .pf-chip { padding:3px 8px; font-size:10px; }
+  .pf-tagline { font-size:9px; letter-spacing:1px; }
+  .pf-hint { font-size:10px; letter-spacing:1px; }
 
   /* Swap banner 2-3 */
-  .swap-banner { padding:6px 10px; gap:8px; margin-bottom:6px; font-size:12px; }
+  .swap-banner { padding:5px 8px; gap:6px; margin-bottom:4px; font-size:11px; flex-wrap:nowrap; }
 }
 
-/* Landscape móvil — mantener layout horizontal pero más compacto */
 @media (max-width: 900px) and (orientation: landscape) {
-  .slide-header h1 { font-size:14px; }
-  .tab-btn, .tab-btn2 { padding:4px 10px; font-size:11px; }
-  .panel-right { width:220px; }
-  .info-text { font-size:12px; }
-  .field-svg { max-height:55vh; }
+  .slide-header h1 { font-size:13px; }
+  .tab-btn, .tab-btn2 { padding:4px 9px; font-size:10px; }
+  .panel-right { width:200px; }
+  .info-text { font-size:11px; }
+  .field-svg { max-height:52vh; }
 }
-.nav-btn{background:rgba(255,215,0,0.1);border:2px solid rgba(255,215,0,0.4);color:#FFD700;padding:8px 20px;border-radius:20px;cursor:pointer;font-size:13px;font-weight:bold;transition:all 0.2s;}
-.nav-btn:hover{background:#FFD700;color:#0a0e1a;}
-.nav-btn:disabled{opacity:0.3;cursor:default;}
-.nav-dots{display:flex;gap:8px;align-items:center;}
-.nav-dot{width:10px;height:10px;border-radius:50%;background:rgba(255,215,0,0.25);cursor:pointer;transition:all 0.2s;}
-.nav-dot.active{background:#FFD700;transform:scale(1.3);}
-.nav-label{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:2px;}
 
-/* ── FIX GITHUB PAGES ── */
-html { overflow: hidden; }
-.slide { z-index: 1; }
-.slide.active { z-index: 2; }
-.nav-bar { z-index: 100; }
 /* ── ANIMACIONES SVG ── */
 @keyframes fadeInUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 @keyframes drawLine{from{stroke-dashoffset:200;}to{stroke-dashoffset:0;}}
