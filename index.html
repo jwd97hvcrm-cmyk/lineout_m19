@@ -1286,6 +1286,166 @@ body{display:flex;align-items:center;justify-content:center;}
 </div>
 </div>
 
+
+<!-- ══ SLIDE SCRUM ══ -->
+<div class="slide" id="sS">
+<div class="slide-jugada">
+  <div class="slide-header">
+    <h1>🏉 Scrum — Jugada AUSTRALIA</h1>
+    <span class="badge">22m en ataque</span>
+  </div>
+  <div class="slide-body">
+    <!-- Panel izquierdo: diagrama -->
+    <div class="panel-left">
+      <div class="tabs-row">
+        <button class="tab-btn active" onclick="scrum_set('australia',this)">AUSTRALIA — Nombre forward</button>
+      </div>
+      <svg id="scrumsvg" viewBox="0 0 620 420" class="field-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="mSO" markerWidth="8" markerHeight="6" orient="auto" refX="7" refY="3"><polygon fill="#FF5722" points="0 0,8 3,0 6"/></marker>
+          <marker id="mSG" markerWidth="8" markerHeight="6" orient="auto" refX="7" refY="3"><polygon fill="#69F0AE" points="0 0,8 3,0 6"/></marker>
+          <marker id="mSB" markerWidth="8" markerHeight="6" orient="auto" refX="7" refY="3"><polygon fill="#4FC3F7" points="0 0,8 3,0 6"/></marker>
+          <marker id="mSY" markerWidth="8" markerHeight="6" orient="auto" refX="7" refY="3"><polygon fill="#FFD700" points="0 0,8 3,0 6"/></marker>
+          <marker id="mSP" markerWidth="8" markerHeight="6" orient="auto" refX="7" refY="3"><polygon fill="#CE93D8" points="0 0,8 3,0 6"/></marker>
+          <marker id="mSR" markerWidth="8" markerHeight="6" orient="auto" refX="7" refY="3"><polygon fill="#FF8A65" points="0 0,8 3,0 6"/></marker>
+        </defs>
+        <!-- Campo -->
+        <rect fill="#1a3a1a" width="620" height="420" rx="8"/>
+        <rect fill="#1e421e" x="10" y="10" width="600" height="400" rx="6"/>
+        <!-- Líneas campo -->
+        <line x1="10" y1="80" x2="610" y2="80" stroke="white" stroke-width="2" opacity="0.9"/>
+        <line x1="10" y1="200" x2="610" y2="200" stroke="white" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+        <text x="580" y="75" fill="white" font-size="10" text-anchor="middle" opacity="0.9" font-family="Arial">22m</text>
+        <text x="580" y="195" fill="white" font-size="10" text-anchor="middle" opacity="0.5" font-family="Arial">mitad</text>
+        <!-- Línea de touch izquierda y derecha -->
+        <line x1="10" y1="10" x2="10" y2="410" stroke="white" stroke-width="2" opacity="0.7"/>
+        <line x1="610" y1="10" x2="610" y2="410" stroke="white" stroke-width="2" opacity="0.7"/>
+        <text x="30" y="30" fill="white" font-size="9" opacity="0.5" font-family="Arial">Touch</text>
+        <text x="570" y="30" fill="white" font-size="9" opacity="0.5" font-family="Arial">Touch</text>
+        <!-- Medio del campo vertical -->
+        <line x1="310" y1="10" x2="310" y2="410" stroke="white" stroke-width="1" stroke-dasharray="4,4" opacity="0.25"/>
+
+        <!-- SCRUM en el centro del campo en 22m -->
+        <!-- Representación del scrum como bloque -->
+        <rect x="255" y="88" width="110" height="50" rx="8" fill="rgba(21,101,192,0.3)" stroke="#1565C0" stroke-width="2"/>
+        <text x="310" y="118" fill="white" font-size="11" font-weight="bold" text-anchor="middle" font-family="Arial">SCRUM</text>
+        <text x="310" y="132" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle" font-family="Arial">1-2-3-4-5-6-7-8</text>
+
+        <!-- 8 se levanta hacia la derecha -->
+        <circle cx="365" cy="155" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
+        <text x="365" y="160" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">8</text>
+        <text x="365" y="183" fill="#FFD700" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">se levanta</text>
+
+        <!-- 9 detrás del scrum -->
+        <circle cx="310" cy="165" r="18" fill="#1565C0" stroke="white" stroke-width="2"/>
+        <text x="310" y="170" fill="white" font-size="12" font-weight="bold" text-anchor="middle" font-family="Arial">9</text>
+
+        <!-- 10 y 15 detrás del scrum como señuelos -->
+        <circle cx="220" cy="175" r="20" fill="#1565C0" stroke="#CE93D8" stroke-width="2.5" stroke-dasharray="5,3"/>
+        <text x="220" y="180" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">10</text>
+        <text x="220" y="203" fill="#CE93D8" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">señuelo</text>
+
+        <circle cx="310" cy="210" r="20" fill="#1565C0" stroke="#CE93D8" stroke-width="2.5" stroke-dasharray="5,3"/>
+        <text x="310" y="215" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">15</text>
+        <text x="310" y="238" fill="#CE93D8" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">señuelo</text>
+
+        <!-- 12 recibe del 8 — AUSTRALIA -->
+        <circle cx="460" cy="175" r="22" fill="#C62828" stroke="#FF5722" stroke-width="3"/>
+        <text x="460" y="181" fill="white" font-size="14" font-weight="bold" text-anchor="middle" font-family="Arial">12</text>
+        <text x="460" y="205" fill="#FF5722" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">AUSTRALIA</text>
+
+        <!-- 13 opción derecha -->
+        <circle cx="530" cy="155" r="20" fill="#1565C0" stroke="white" stroke-width="2"/>
+        <text x="530" y="160" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">13</text>
+
+        <!-- 11 por atrás -->
+        <circle cx="150" cy="230" r="20" fill="#1565C0" stroke="white" stroke-width="2"/>
+        <text x="150" y="235" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">11</text>
+        <text x="150" y="258" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle" font-family="Arial">por atrás</text>
+
+        <!-- 14 profundidad -->
+        <circle cx="560" cy="260" r="20" fill="#1565C0" stroke="white" stroke-width="2"/>
+        <text x="560" y="265" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">14</text>
+        <text x="560" y="288" fill="rgba(255,255,255,0.5)" font-size="8" text-anchor="middle" font-family="Arial">profundidad</text>
+
+        <!-- FLECHAS -->
+        <!-- 8 pasa al 12 -->
+        <path d="M 383 155 Q 420 155 440 168" fill="none" stroke="#FFD700" stroke-width="2.5" marker-end="url(#mSY)"/>
+        <text x="415" y="148" fill="#FFD700" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">pase del 8</text>
+
+        <!-- 12 decide: opción 1 → 13 -->
+        <path d="M 480 165 Q 505 155 512 155" fill="none" stroke="#FF5722" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#mSO)"/>
+        <text x="500" y="145" fill="#FF5722" font-size="8" text-anchor="middle" font-family="Arial">→ 13</text>
+
+        <!-- 12 decide: opción 2 → avanza -->
+        <path d="M 460 153 Q 460 110 460 90" fill="none" stroke="#FF5722" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#mSO)"/>
+        <text x="475" y="115" fill="#FF5722" font-size="8" text-anchor="middle" font-family="Arial">avanza</text>
+
+        <!-- 12 decide: opción 3 → devuelve al 10 -->
+        <path d="M 440 175 Q 350 185 238 178" fill="none" stroke="#FF5722" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#mSO)"/>
+        <text x="340" y="195" fill="#FF5722" font-size="8" text-anchor="middle" font-family="Arial">→ 10</text>
+
+        <!-- 10 y 15 se suman al lado que sale -->
+        <path d="M 220 155 Q 280 120 350 90" fill="none" stroke="#CE93D8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#mSP)"/>
+        <path d="M 310 190 Q 380 160 430 130" fill="none" stroke="#CE93D8" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#mSP)"/>
+        <text x="270" y="105" fill="#CE93D8" font-size="8" text-anchor="middle" font-family="Arial">se suman al juego</text>
+
+        <!-- 14 corre en profundidad -->
+        <path d="M 560 240 Q 560 180 555 160" fill="none" stroke="#4FC3F7" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#mSB)"/>
+
+        <!-- 11 por atrás -->
+        <path d="M 150 210 Q 200 190 240 185" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#mSG)"/>
+
+        <!-- Label seña -->
+        <rect x="15" y="88" width="130" height="40" rx="6" fill="rgba(0,0,0,0.65)"/>
+        <text x="80" y="105" fill="#FFD700" font-size="11" font-weight="bold" text-anchor="middle" font-family="Arial">Nombre forward</text>
+        <text x="80" y="120" fill="white" font-size="9" text-anchor="middle" font-family="Arial">8 se levanta → 12</text>
+
+        <!-- Leyenda opciones 12 -->
+        <rect x="15" y="300" width="180" height="90" rx="6" fill="rgba(0,0,0,0.6)"/>
+        <text x="105" y="318" fill="#FF5722" font-size="9" font-weight="bold" text-anchor="middle" font-family="Arial">12 decide:</text>
+        <text x="105" y="333" fill="white" font-size="8" text-anchor="middle" font-family="Arial">① Pasa al 13 (lado derecho)</text>
+        <text x="105" y="347" fill="white" font-size="8" text-anchor="middle" font-family="Arial">② Avanza solo</text>
+        <text x="105" y="361" fill="white" font-size="8" text-anchor="middle" font-family="Arial">③ Devuelve al 10</text>
+        <text x="105" y="378" fill="#CE93D8" font-size="8" text-anchor="middle" font-family="Arial">10 y 15 se suman al juego</text>
+
+        <text x="580" y="50" fill="white" font-size="10" opacity="0.4" text-anchor="middle" font-family="Arial">▲ Try</text>
+      </svg>
+    </div>
+
+    <!-- Panel derecho: info -->
+    <div class="panel-right">
+      <div class="info-title">🏉 AUSTRALIA</div>
+      <div class="info-row">
+        <div class="info-num" style="background:rgba(255,215,0,0.2);border:1.5px solid #FFD700;color:#FFD700;font-size:10px;">SEÑA</div>
+        <div class="info-text"><strong>Nombre de un forward</strong><br>El 8 se levanta del scrum</div>
+      </div>
+      <div class="info-row">
+        <div class="info-num" style="background:rgba(249,168,37,0.2);border:1.5px solid #F9A825;color:#F9A825;">8</div>
+        <div class="info-text">Se levanta y da la pelota al <strong style="color:#FF5722;">12</strong> por el lado derecho</div>
+      </div>
+      <div class="info-row">
+        <div class="info-num" style="background:rgba(198,40,40,0.2);border:1.5px solid #C62828;color:#FF5722;">12</div>
+        <div class="info-text"><strong style="color:#FF5722;">Decide:</strong><br>→ Pasa al 13<br>→ Avanza solo<br>→ Devuelve al 10</div>
+      </div>
+      <div class="variant-box" style="border-color:rgba(206,147,216,0.3);background:rgba(206,147,216,0.07);">
+        <div class="vt" style="color:#CE93D8;">Señuelos → apoyo</div>
+        <div class="variant-item" style="color:#CE93D8;"><strong>10 y 15</strong> detrás del scrum</div>
+        <div class="variant-item" style="color:#CE93D8;">Se suman al lado que sale la pelota</div>
+      </div>
+      <div class="variant-box" style="border-color:rgba(79,195,247,0.25);background:rgba(79,195,247,0.07);">
+        <div class="vt" style="color:#4FC3F7;">Apoyo profundidad</div>
+        <div class="variant-item" style="color:#4FC3F7;"><strong>14</strong> corre en profundidad</div>
+        <div class="variant-item" style="color:rgba(255,255,255,0.5);"><strong>11</strong> sigue por atrás</div>
+      </div>
+      <div style="background:rgba(255,215,0,0.08);border:1px solid rgba(255,215,0,0.25);border-radius:8px;padding:8px;font-size:11px;color:#aaa;text-align:center;">
+        📍 Scrum en 22m rival<br>centro del ancho de la cancha
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
 </div><!-- fin slideshow -->
 <!-- ══ BARRA DE NAVEGACIÓN ══ -->
 <div class="nav-bar">
@@ -1298,8 +1458,8 @@ body{display:flex;align-items:center;justify-content:center;}
 </div>
 <script>
 // ══ NAVEGACIÓN ══
-const SLIDES = ['s0','s1','s2','s3','s4','s5','s6','sD'];
-const LABELS = ['Portada','Sistema de Señas','Line Out 7','Line Out 5','5-2','3-2','2-3','Defensa'];
+const SLIDES = ['s0','s1','s2','s3','s4','s5','s6','sD','sS'];
+const LABELS = ['Portada','Sistema de Señas','Line Out 7','Line Out 5','5-2','3-2','2-3','Defensa','Scrum Australia'];
 let cur = 0;
 
 function buildDots(){
@@ -1328,6 +1488,7 @@ function goTo(n){
   if(cur===5) lo32_render();
   if(cur===6) lo23_render();
   if(cur===7) def_render();
+  if(cur===8) scrum_render();
 }
 
 function nextSlide(){ if(cur<SLIDES.length-1) goTo(cur+1); }
@@ -1674,6 +1835,10 @@ function def_render(){
     if(p1lx){p1lx.textContent='SIEMPRE SALTA';p1lx.setAttribute('fill','#69F0AE');}
   }
 }
+
+// ══ SCRUM ══
+function scrum_render(){ /* diagrama estático, no necesita render dinámico */ }
+function scrum_set(k,btn){ setTabs(btn.closest('.tabs-row'),btn); }
 
 // Init — forzar estado correcto al cargar
 window.addEventListener('DOMContentLoaded', function(){
