@@ -1222,7 +1222,7 @@ body{display:flex;align-items:center;justify-content:center;}
         <text x="230" y="275" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">4</text>
         <circle cx="280" cy="270" r="20" fill="#1565C0" stroke="#69F0AE" stroke-width="2.5"/>
         <text x="280" y="275" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">5</text>
-        <text x="230" y="300" fill="#69F0AE" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">SIEMPRE SALTA</text>
+        <text id="defp1label" x="230" y="300" fill="#69F0AE" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">SIEMPRE SALTA</text>
         <!-- Plataforma 2: 6-7-8 (espejo) -->
         <circle cx="340" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
         <text x="340" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">6</text>
@@ -1231,10 +1231,10 @@ body{display:flex;align-items:center;justify-content:center;}
         <circle cx="440" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
         <text x="440" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">8</text>
         <text x="390" y="300" fill="#FFD700" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">ESPEJO RIVAL</text>
-        <!-- 3 basurero detras de plataforma 678 -->
-        <circle cx="500" cy="270" r="20" fill="#C62828" stroke="white" stroke-width="2"/>
-        <text x="500" y="275" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">3</text>
-        <text x="500" y="300" fill="#FF5252" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">BASURERO</text>
+        <!-- 3 basurero dentro de 15m detras de 678 -->
+        <circle cx="450" cy="270" r="20" fill="#C62828" stroke="white" stroke-width="2"/>
+        <text x="450" y="275" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">3</text>
+        <text x="450" y="300" fill="#FF5252" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">BASURERO</text>
         <!-- 9 dentro de 5m (canal) -->
         <circle cx="130" cy="310" r="20" fill="#1565C0" stroke="#4FC3F7" stroke-width="2.5"/>
         <text x="130" y="315" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">9</text>
@@ -1629,6 +1629,7 @@ function def_render(){
       'M 340 250 Q 220 205 90 195',
       'M 390 250 Q 240 200 90 190',
       'M 440 250 Q 260 195 90 185',
+      'M 450 250 Q 270 192 90 180',
     ];
     paths.forEach(d=>{
       const e=document.createElementNS(NS,'path');
@@ -1648,6 +1649,8 @@ function def_render(){
     document.getElementById('deflt').textContent='XX';
     document.getElementById('deflt').setAttribute('fill','#FF5252');
     document.getElementById('defls').textContent='Empuje envolvente al touch';
+    const p1l=document.getElementById('defp1label');
+    if(p1l){p1l.textContent='DETECTA Y EMPUJA';p1l.setAttribute('fill','#FF5252');}
   } else {
     // TX: plataforma 1 salta, plataforma 2 espejo
     [180,230,280].forEach(x=>{
@@ -1667,6 +1670,8 @@ function def_render(){
     document.getElementById('deflt').textContent='TX';
     document.getElementById('deflt').setAttribute('fill','#FF8C00');
     document.getElementById('defls').textContent='Salta plataforma 1-4-5';
+    const p1lx=document.getElementById('defp1label');
+    if(p1lx){p1lx.textContent='SIEMPRE SALTA';p1lx.setAttribute('fill','#69F0AE');}
   }
 }
 
