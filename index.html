@@ -1458,8 +1458,8 @@ body{display:flex;align-items:center;justify-content:center;}
 </div>
 <script>
 // ══ NAVEGACIÓN ══
-const SLIDES = ['s0','s1','s2','s3','s4','s5','s6','sD','sS'];
-const LABELS = ['Portada','Sistema de Señas','Line Out 7','Line Out 5','5-2','3-2','2-3','Defensa','Scrum Australia'];
+const SLIDES = ['s0','s1','s2','s3','s4','s5','s6','sD'];
+const LABELS = ['Portada','Sistema de Señas','Line Out 7','Line Out 5','5-2','3-2','2-3','Defensa'];
 let cur = 0;
 
 function buildDots(){
@@ -1488,7 +1488,6 @@ function goTo(n){
   if(cur===5) lo32_render();
   if(cur===6) lo23_render();
   if(cur===7) def_render();
-  if(cur===8) scrum_render();
 }
 
 function nextSlide(){ if(cur<SLIDES.length-1) goTo(cur+1); }
