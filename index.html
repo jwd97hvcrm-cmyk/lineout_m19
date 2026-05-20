@@ -1224,17 +1224,17 @@ body{display:flex;align-items:center;justify-content:center;}
         <text x="280" y="275" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">5</text>
         <text id="defp1label" x="230" y="300" fill="#69F0AE" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">SIEMPRE SALTA</text>
         <!-- Plataforma 2: 6-7-8 (espejo) -->
-        <circle cx="340" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
-        <text x="340" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">6</text>
-        <circle cx="390" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
-        <text x="390" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">7</text>
-        <circle cx="440" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
-        <text x="440" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">8</text>
-        <text x="390" y="300" fill="#FFD700" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">ESPEJO RIVAL</text>
+        <circle cx="330" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
+        <text x="330" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">6</text>
+        <circle cx="375" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
+        <text x="375" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">7</text>
+        <circle cx="420" cy="270" r="20" fill="#F9A825" stroke="#FFD700" stroke-width="2.5"/>
+        <text x="420" y="275" fill="#1a1a2e" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">8</text>
+        <text x="375" y="300" fill="#FFD700" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">ESPEJO RIVAL</text>
         <!-- 3 basurero dentro de 15m detras de 678 -->
-        <circle cx="450" cy="270" r="20" fill="#C62828" stroke="white" stroke-width="2"/>
-        <text x="450" y="275" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">3</text>
-        <text x="450" y="300" fill="#FF5252" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">BASURERO</text>
+        <circle cx="455" cy="270" r="20" fill="#C62828" stroke="white" stroke-width="2"/>
+        <text x="455" y="275" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">3</text>
+        <text x="455" y="300" fill="#FF5252" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">BASURERO</text>
         <!-- 9 dentro de 5m (canal) -->
         <circle cx="130" cy="310" r="20" fill="#1565C0" stroke="#4FC3F7" stroke-width="2.5"/>
         <text x="130" y="315" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">9</text>
@@ -1244,11 +1244,11 @@ body{display:flex;align-items:center;justify-content:center;}
         <text x="320" y="360" fill="white" font-size="13" font-weight="bold" text-anchor="middle" font-family="Arial">2</text>
         <text x="320" y="383" fill="#FF8C00" font-size="8" font-weight="bold" text-anchor="middle" font-family="Arial">pivote maul</text>
         <!-- Flechas espejo 6-7-8 -->
-        <path d="M 340 248 Q 390 195 440 248" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#mDY)"/>
-        <text x="390" y="188" fill="#FFD700" font-size="8" text-anchor="middle" font-family="Arial">detecta plataforma rival</text>
+        <path d="M 330 248 Q 375 195 420 248" fill="none" stroke="#FFD700" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#mDY)"/>
+        <text x="375" y="188" fill="#FFD700" font-size="8" text-anchor="middle" font-family="Arial">detecta plataforma rival</text>
         <!-- Flecha 8 a línea de pase -->
-        <path d="M 440 260 Q 510 220 580 200" fill="none" stroke="#4FC3F7" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#mDB)"/>
-        <text x="520" y="215" fill="#4FC3F7" font-size="8" text-anchor="middle" font-family="Arial">8 corta taping</text>
+        <path d="M 420 250 Q 500 210 580 195" fill="none" stroke="#4FC3F7" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#mDB)"/>
+        <text x="510" y="208" fill="#4FC3F7" font-size="8" text-anchor="middle" font-family="Arial">8 corta taping</text>
         <!-- Flechas dinámicas -->
         <g id="defarrows"></g>
         <!-- Label seña -->
@@ -1626,10 +1626,10 @@ function def_render(){
       'M 180 250 Q 140 220 90 210',
       'M 230 250 Q 170 215 90 205',
       'M 280 250 Q 190 210 90 200',
-      'M 340 250 Q 220 205 90 195',
-      'M 390 250 Q 240 200 90 190',
-      'M 440 250 Q 260 195 90 185',
-      'M 450 250 Q 270 192 90 180',
+      'M 330 250 Q 220 205 90 195',
+      'M 375 250 Q 240 200 90 190',
+      'M 420 250 Q 260 195 90 185',
+      'M 455 250 Q 270 192 90 180',
     ];
     paths.forEach(d=>{
       const e=document.createElementNS(NS,'path');
